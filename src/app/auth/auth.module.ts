@@ -16,4 +16,4 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     AuthRoutingModule
   ]
 })
-export class AuthModule { }
+export class AuthModule { } 

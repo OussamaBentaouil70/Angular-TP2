@@ -29,7 +29,21 @@
                 "delete": "Archiver"
             },
             "add_page": {
-                "title": "Ajouter un utilisateur"
+                "title": "Ajouter un utilisateur",
+                "label":{
+                    "first_name": "Prénom",
+                    "last_name": "Nom",
+                    "email": "Adresse électronique",
+                    "job": "Travail",
+                    "phone_number": "Numéro de télephone"
+                }
+            },
+            "placeholders":{
+                "first_name": "Entrez votre prénom",
+                "last_name": "Entrez votre nom de famille",
+                "email": "Entrez votre adresse e-mail",
+                "job": "Entrez votre travail",
+                "phone_number": "Entrez votre numéro de téléphone"
             }
         }
     }

@@ -16,13 +16,15 @@ import { MainService } from './services/main.service';
 import { AuthModule } from './auth/auth.module';
 import { PagesModule } from './pages/pages.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AuthLayoutComponent,
     PagesLayoutComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,7 @@ import { PagesModule } from './pages/pages.module';
     NgSelectModule,
     AuthModule,
     PagesModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     MainService

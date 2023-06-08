@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { UsersService } from 'src/app/services/users.service';
 import { UserType } from 'src/app/types/users.type';
@@ -10,12 +11,13 @@ import { UserType } from 'src/app/types/users.type';
 })
 export class ListUsersComponent implements OnInit, OnDestroy {
 
+
   public loading = true;
   public activePage: number = 0;
   public users: UserType[] = [];
   public totalPages = 1;
 
-  constructor(public usersService: UsersService) {}
+  constructor(public usersService: UsersService, private router: Router) {}
 
   getUsers(page: number = 1): void {
     if (page >= 1 && page <= this.totalPages && this.activePage !== page) {
@@ -36,7 +38,18 @@ export class ListUsersComponent implements OnInit, OnDestroy {
   }
 
   deleteUser(userId: number) {
-    // TODO: Delete user action
+    const confirmation = confirm('Are you sure you want to delete this user?');
+    if (confirmation) {
+      this.usersService.deleteUser(userId).subscribe(
+        () => {
+          alert('User deleted successfully!');
+          this.users = this.users.filter(user => user.id !== userId);
+        },
+        error => {
+          console.error('An error occurred while deleting the user.', error);
+        }
+      );
+    }
   }
 
   ngOnInit(): void {
@@ -45,5 +58,8 @@ export class ListUsersComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     
+  }
+  updateUser(userId: number) {
+    this.router.navigate(['/update', userId]);
   }
 }

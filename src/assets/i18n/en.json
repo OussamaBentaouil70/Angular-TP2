@@ -29,7 +29,21 @@
                 "delete": "Delete"
             },
             "add_page": {
-                "title": "Add a new user"
+                "title": "Add a new user",
+                "label":{
+                    "first_name": "First name",
+                    "last_name": "Last name",
+                    "email": "Email address",
+                    "job": "Job",
+                    "phone_number": "Phone Number"
+                }               
+            },
+            "placeholders":{
+                "first_name": "Enter your First Name",
+                "last_name": "Enter your Last name",
+                "email": "Enter your Email address",
+                "job": "Enter your Job",
+                "phone_number": "Enter your Phone Number"
             }
         }
     }
